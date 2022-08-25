@@ -11,10 +11,10 @@ mkdir -p $OUTPUT_DIR
 
 python3 run_pl_pred.py --data_dir ../data/ \
 --labels ../data/labels.txt \
---target_labels ../data/labels-wnut.txt \
+--target_labels ../data/labels-fin.txt \
 --train_fname train \
---sup_fname support-wnut-5shot/0 \
---test_fname test-wnut \
+--sup_fname support-fin-5shot/0 \
+--test_fname test-fin \
 --model_name_or_path $BERT_MODEL \
 --checkpoint $CHECKPOINT \
 --output_dir $OUTPUT_DIR \
