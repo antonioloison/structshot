@@ -13,7 +13,7 @@ from collections import Counter, defaultdict
 import os
 import random
 import sys
-from tqdm import tqdm
+from tqdm.autonotebook import tqdm
 from sklearn.model_selection import train_test_split
 
 # from evaluation import label_semantics_evaluation, label_semantics_display_preds, get_bio_litteral_label

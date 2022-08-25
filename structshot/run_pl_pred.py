@@ -12,7 +12,7 @@ import numpy as np
 
 from seqeval.metrics import accuracy_score, f1_score, precision_score, recall_score
 from torch.utils.data import DataLoader, TensorDataset
-from tqdm import tqdm
+from tqdm.autonotebook import tqdm
 from lightning_base import add_generic_args, generic_train
 from run_pl_ner import NERTransformer
 from tasks import NER
