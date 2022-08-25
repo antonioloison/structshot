@@ -187,7 +187,14 @@ def nn_decode(reps, support_reps, support_tags):
     NNShot: neariest neighbor decoder for few-shot NER
     """
     batch_size, sent_len, ndim = reps.shape
-    scores = _euclidean_metric(reps.view(-1, ndim), support_reps, True)
+    # Batch computation to avoid memory issues
+    all_scores = []
+    inter_reps = reps.view(-1, ndim)
+    n = inter_reps.shape[0]
+    for i in range(0, n, 1000):
+        logits = _euclidean_metric(inter_reps[i:i+1000], support_reps, True)
+        all_scores.append(logits)
+    scores = torch.cat(all_scores, dim=0)
     # tags = support_tags[torch.argmax(scores, 1)]
     emissions = get_nn_emissions(scores, support_tags)
     tags = torch.argmax(emissions, 1)
