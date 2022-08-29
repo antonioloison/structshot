@@ -11,8 +11,8 @@ export CURRENT_DIR=${PWD}
 export OUTPUT_DIR=${CURRENT_DIR}/${OUTPUT_DIR_NAME}
 mkdir -p $OUTPUT_DIR
 
-python3 run_pl_ner.py --data_dir ../data/ \
---labels ../data/labels.txt \
+python3 run_pl_ner.py --data_dir ../data/fewnerd/ \
+--labels ../data/labels-fewnerd.txt \
 --model_name_or_path $BERT_MODEL \
 --output_dir $OUTPUT_DIR \
 --max_seq_length  $MAX_LENGTH \

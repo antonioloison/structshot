@@ -7,3 +7,5 @@ venv/
 lightning_logs/
 *.zip
 dataset/
+fewnerd/
+!data/fewnerd
