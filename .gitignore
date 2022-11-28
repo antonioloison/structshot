@@ -9,3 +9,4 @@ lightning_logs/
 dataset/
 fewnerd/
 !data/fewnerd
+data/ontonotes

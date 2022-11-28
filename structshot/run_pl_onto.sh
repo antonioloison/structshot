@@ -6,13 +6,13 @@ export BATCH_SIZE=32
 export NUM_EPOCHS=3
 export SEED=1
 
-export OUTPUT_DIR_NAME=output-model
+export OUTPUT_DIR_NAME=output-model-onto
 export CURRENT_DIR=${PWD}
 export OUTPUT_DIR=${CURRENT_DIR}/${OUTPUT_DIR_NAME}
 mkdir -p $OUTPUT_DIR
 
-python3 run_pl_ner.py --data_dir ../data/ \
---labels ../data/labels.txt \
+python3 run_pl_ner.py --data_dir ../data/ontonotes/ \
+--labels ../data/labels-ontonotes.txt \
 --model_name_or_path $BERT_MODEL \
 --output_dir $OUTPUT_DIR \
 --max_seq_length  $MAX_LENGTH \
